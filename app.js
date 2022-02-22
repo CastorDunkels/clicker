@@ -1,25 +1,25 @@
 let nugget = 0;
-let upgrade = 1;
-let UpgradeButton = document.querySelector(".NuggetUpgrade");
+let health = 1;
+let HealthButton = document.querySelector(".NuggetHealth");
 let NuggetButton = document.querySelector(".Nugget");
 let NuggetCounter = document.querySelector(".Nugget-count");
 
 NuggetButton.addEventListener("click", Nugget);
-UpgradeButton.addEventListener("click", NuggetUpgrade);
+HealthButton.addEventListener("click", NuggetHealth);
 
 function Nugget() {
 
-rndNum = Math.floor(Math.random() * 10);
+rndNum = Math.floor(Math.random() * 10);  //gotta fix health stuff but not right now
 if (rndNum == 0) {
-    nugget += 1 *upgrade
+    nugget += 1 *health
 }
 NuggetCounter.innerHTML = "Nugget-count: " + nugget + "st";
-console.log(upgrade);
+console.log(health);
 }
 
-function NuggetUpgrade() {
+function NuggetHealth() {
     if (nugget >= 1) {
         nugget--;
-        upgrade *= 4;
+        health ++;
     }
 }

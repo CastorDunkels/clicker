@@ -1,0 +1,23 @@
+body{
+    background-image: url("Stockholm-subway-1.jpg");
+    color:rgb(0, 0, 0);
+}
+Button:active{
+    background:rgb(193, 12, 12);
+}
+.Nugget{
+    background: linear-gradient(360deg,rgb(226, 111, 4) 20%,rgb(175, 67, 16) 100%);
+    color: white;
+    border: 10px;
+    border-style: double;
+    border-radius: 100px;
+    border-color: rgb(0, 0, 0);
+}
+.NuggetHealth{
+    background: rgb(63, 253, 0);
+    color: rgb(255, 24, 24);
+    border: 15px;
+    border-style: dashed;
+    border-radius: 10px;
+    border-color: rgb(255, 40, 40);
+}
