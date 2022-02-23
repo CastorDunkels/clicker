@@ -1,6 +1,7 @@
 body{
-    background-image: url("Stockholm-subway-1.jpg");
-    color:rgb(0, 0, 0);
+    background-image: url("9Knam.jpeg");
+    background-size: cover;
+    color:rgb(128, 162, 131);
 }
 Button:active{
     background:rgb(193, 12, 12);
@@ -14,10 +15,10 @@ Button:active{
     border-color: rgb(0, 0, 0);
 }
 .NuggetHealth{
-    background: rgb(63, 253, 0);
-    color: rgb(255, 24, 24);
+    background: rgb(109, 135, 99);
+    color: rgb(230, 21, 21);
     border: 15px;
     border-style: dashed;
     border-radius: 10px;
-    border-color: rgb(255, 40, 40);
+    border-color: rgb(127, 82, 82);
 }
