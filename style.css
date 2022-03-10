@@ -3,7 +3,7 @@ body{
     background-size: cover;
     color:rgb(128, 162, 131);
 }
-Button:active{
+.Nugget:active{
     background:rgb(193, 12, 12);
 }
 .Nugget{
@@ -20,5 +20,31 @@ Button:active{
     border: 15px;
     border-style: dashed;
     border-radius: 10px;
-    border-color: rgb(127, 82, 82);
+    border-color: rgb(224, 42, 42);
+}
+.NuggetHealth:active{
+    background-color: greenyellow;
+}
+.Death{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}.RestartButton {
+    color: crimson;
+    background: black;
+    border: 10px;
+    border-color: rgb(50, 0, 0);
+    border-radius: 20;
+    border-style: ridge;
+
+}
+.RestartButton:active {
+    background: goldenrod;
 }
