@@ -7,6 +7,7 @@ let NuggetCounter = document.querySelector(".Nugget-count");
 let HealthDisplay = document.querySelector(".HP");
 let PointAmount = document.querySelector(".Score");
 let StartOver = document.querySelector(".RestartButton");
+let NuggetAquired = document.querySelector(".GetNugget");
 
 NuggetButton.addEventListener("click", Nugget);
 HealthButton.addEventListener("click", NuggetHealth);
@@ -28,10 +29,14 @@ function Nugget(event) {
     rndNum = Math.floor(Math.random() * 10); 
     if (rndNum == 0) {
         SetNugget(nugget + 1); 
+        if (nugget + 1){
+            document.querySelector(".GetNugget").style.display="block";
+        }
     }
 
     console.log(health);
 }
+
 function SetHealth(h){
     if(h === 0){
         document.querySelector(".Death").style.display="block";
@@ -62,10 +67,18 @@ function RestartButton(){
 
 SetHealth(10);
 
-setInterval(() => {
-    SetHealth(health - 1);
-}, 2000);
+
+if(points >= 100){
+    setInterval(() => {
+        SetHealth(health - 1); //i need to fix this 
+    }, 50000);
+}
+else {
+    setInterval(() => {
+        SetHealth(health - 1);
+    }, 2000);
+}
 SetPoints(0);
 setInterval(() => {
     SetPoints(points + 1);
-}, 5000);
+}, 400);
