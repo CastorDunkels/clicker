@@ -6,6 +6,7 @@ let NuggetButton = document.querySelector(".Nugget");
 let NuggetCounter = document.querySelector(".Nugget-count");
 let HealthDisplay = document.querySelector(".HP");
 let PointAmount = document.querySelector(".Score");
+let EndScore = document.querySelector(".DeathScore");
 let StartOver = document.querySelector(".RestartButton");
 let NuggetAquired = document.querySelector(".GetNugget");
 
@@ -16,6 +17,7 @@ StartOver.addEventListener("click", RestartButton);
 function SetPoints(p) {
     points = p;
     PointAmount.innerHTML = "Score:" + points;
+    EndScore.innerHTML = points;
 }
 function SetNugget(n) {
     nugget = n;
@@ -40,6 +42,7 @@ function Nugget(event) {
 function SetHealth(h){
     if(h === 0){
         document.querySelector(".Death").style.display="block";
+        document.querySelector(".RestartButton").style.display="block";
     }
     if(h < 0){
         h = 0;
@@ -65,20 +68,32 @@ function RestartButton(){
     return false;
 }
 
-SetHealth(10);
 
 
-if(points >= 100){
-    setInterval(() => {
-        SetHealth(health - 1); //i need to fix this 
-    }, 50000);
-}
-else {
-    setInterval(() => {
-        SetHealth(health - 1);
-    }, 2000);
+function DecreaseHealth(){
+    SetHealth(health - 1);
+    if(points >= 100){
+        setTimeout(() => {
+            DecreaseHealth();
+        }, 1500);
+    }
+    else {  
+        setTimeout(() => {
+            DecreaseHealth();
+        }, 2000);
+    }
 }
 SetPoints(0);
 setInterval(() => {
-    SetPoints(points + 1);
-}, 400);
+    if(health >= 1){
+        SetPoints(points + 1);
+    }
+    else{
+
+    }
+}, 1000);
+
+SetHealth(10);
+setTimeout(() => {
+    DecreaseHealth();
+}, 2000);

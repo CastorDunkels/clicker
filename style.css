@@ -1,5 +1,5 @@
 body{
-    background-image: url("9Knam.jpeg");
+    background-image: url("background.jpg");
     background-size: cover;
     color:rgb(128, 162, 131);
 }
@@ -26,7 +26,7 @@ body{
     border-color: rgb(224, 42, 42);
 }
 .NuggetHealth:active{
-    background-color: greenyellow;
+    background-color: rgb(100, 255, 150);
 }
 .Death{
     display: none;
@@ -35,11 +35,14 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("9Knam.jpeg");
+    background-image: url("You-Died.jpg");
     border: 0;
     padding: 0;
     margin: 0;
 }.RestartButton {
+    display: none;
+    position: absolute;
+    top: 500px;
     color: crimson;
     background: black;
     border: 10px;
