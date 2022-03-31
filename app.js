@@ -32,7 +32,12 @@ function Nugget(event) {
     if (rndNum == 0) {
         SetNugget(nugget + 1); 
         if (nugget + 1){
+            setTimeout(function(){
+                document.querySelector(".GetNugget").classList.remove("fade-out");
+                document.querySelector(".GetNugget").style.display="none";
+            } ,2000);
             document.querySelector(".GetNugget").style.display="block";
+            document.querySelector(".GetNugget").classList.add("fade-out");
         }
     }
 
@@ -42,7 +47,6 @@ function Nugget(event) {
 function SetHealth(h){
     if(h === 0){
         document.querySelector(".Death").style.display="block";
-        document.querySelector(".RestartButton").style.display="block";
     }
     if(h < 0){
         h = 0;
@@ -51,7 +55,7 @@ function SetHealth(h){
         h = 10;
     } 
     health = h;
-    HealthDisplay.innerHTML = health;
+    HealthDisplay.innerHTML = "Health:" + health;
 }
 
 function NuggetHealth() {
@@ -72,12 +76,17 @@ function RestartButton(){
 
 function DecreaseHealth(){
     SetHealth(health - 1);
-    if(points >= 100){
+    if(points >= 100 && points < 1000){
         setTimeout(() => {
             DecreaseHealth();
-        }, 1500);
+        }, 1000);
     }
-    else {  
+    if (points >= 1000){
+        setTimeout(() => {
+            DecreaseHealth();
+        }, 100);
+    }
+    if(points < 100) {  
         setTimeout(() => {
             DecreaseHealth();
         }, 2000);
@@ -91,9 +100,9 @@ setInterval(() => {
     else{
 
     }
-}, 1000);
+}, 1500);
 
 SetHealth(10);
 setTimeout(() => {
-    DecreaseHealth();
+   DecreaseHealth();
 }, 2000);

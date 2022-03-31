@@ -1,60 +1,143 @@
-body{
-    background-image: url("background.jpg");
-    background-size: cover;
-    color:rgb(128, 162, 131);
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  color: rgb(200, 200, 0);
 }
-.Nugget:active{
-    background:rgb(193, 12, 12);
+.column25-75 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
-.Nugget{
-    background: linear-gradient(360deg,rgb(226, 111, 4) 20%,rgb(175, 67, 16) 100%);
-    color: white;
-    border: 10px;
-    border-style: double;
-    border-radius: 100px;
-    border-color: rgb(0, 0, 0);
+.column0-25 {
+  display: flex;
+  justify-content: center;
+  width: 25%;
 }
-.Nugget img{
-    height: 100px;
+.column75-100 {
+  display: flex;
+  width: 25%;
 }
-.NuggetHealth{
-    background: rgb(109, 135, 99);
-    color: rgb(230, 21, 21);
-    border: 15px;
-    border-style: dashed;
-    border-radius: 10px;
-    border-color: rgb(224, 42, 42);
-}
-.NuggetHealth:active{
-    background-color: rgb(100, 255, 150);
-}
-.Death{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("You-Died.jpg");
-    border: 0;
-    padding: 0;
-    margin: 0;
-}.RestartButton {
-    display: none;
-    position: absolute;
-    top: 500px;
-    color: crimson;
-    background: black;
-    border: 10px;
-    border-color: rgb(50, 0, 0);
-    border-radius: 20;
-    border-style: ridge;
 
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.row [class^="column"] {
+  float: left;
+}
+
+.container {
+  margin: 25px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.Nugget:active {
+  background: rgb(193, 12, 12);
+}
+.Nugget {
+  background: linear-gradient(
+    360deg,
+    rgb(226, 111, 4) 20%,
+    rgb(175, 67, 16) 100%
+  );
+  margin: 20px;
+  width: 16vw;
+  color: white;
+  border: 10px;
+  border-style: double;
+  border-radius: 100px;
+  border-color: rgb(0, 0, 0);
+}
+.Nugget img {
+  width: 10vw;
+}
+.NuggetHealth {
+  background: rgb(62, 88, 52);
+  color: rgb(230, 21, 21);
+  width: 17vw;
+  font-size: 1vw;
+  border: 15px;
+  margin: 20px;
+  border-style: dashed;
+  border-radius: 10px;
+  border-color: rgb(224, 42, 42);
+}
+.NuggetHealth:active {
+  background-color: rgb(100, 255, 150);
+}
+.HP {
+  font-size: 3vw;
+}
+.Nugget-count {
+  display: flex;
+  font-size: 3vw;
+  color: crimson;
+}
+.Score {
+  display: flex;
+  font-size: 3vw;
+}
+.Death {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("You-Died.jpg");
+  background-size: cover;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.DeathPoint{
+    position: absolute;
+    font-size: 3vw;
+    top: 15%;
+    left: 40%;
+}
+.RestartButton {
+  position: absolute;
+  width: 20vw;
+  top: 25%;
+  left: 40%;
+  color: crimson;
+  background: black;
+  border: 10px;
+  border-color: rgb(50, 0, 0);
+  border-radius: 20;
+  border-style: ridge;
 }
 .RestartButton:active {
-    background: goldenrod;
-} 
-.GetNugget img{
-    display: none;
-    height: 100px;
+  background: goldenrod;
+}
+.GetNugget {
+  display: none;
+}
+
+.fade-out {
+  animation: fade-out 2s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column0-25 {
+    width: 100%;
+  }
+  .column25-75 {
+    width: 100%;
+  }
+  .column75-100 {
+    width: 100%;
+  }
 }
